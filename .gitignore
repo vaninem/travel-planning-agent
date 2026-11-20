@@ -1,0 +1,23 @@
+.env
+.env.*
+!.env.example
+.DS_Store
+.venv*/
+.runtime/
+runtime/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local
+
+# Portfolio documentation: keep the current README screenshots only.
+/docs/*
+!/docs/demo-nanjing-itinerary.png
+!/docs/demo-nanjing-budget.png
+!/docs/demo-nanjing-planner.png
+!/docs/demo-nanjing-itinerary-detail.png
+!/docs/demo-shanghai.png
+!/docs/demo-seattle.png

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "travel-planning-agent"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "httpx>=0.27,<1",
+  "pydantic>=2.9,<3",
+  "python-dotenv>=1,<2",
+  "uvicorn>=0.30,<1",
+]
+
+[project.optional-dependencies]
+redis = ["redis>=5,<8"]
+dev = ["pytest>=8,<10", "redis>=5,<8"]
+embedding = ["httpx[socks]>=0.27,<1", "psycopg[binary]>=3.2,<4", "pgvector>=0.3,<1"]
+
+[tool.setuptools.packages.find]
+include = ["travel_agent*", "evals*"]
+
+[tool.setuptools.package-data]
+travel_agent = ["guide_data/*.md", "guide_data/**/*.md"]
+evals = ["*.jsonl", "data/*.jsonl", "data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
